@@ -8,8 +8,8 @@ public class MasterCard extends BaseCard{
 
     public String country;
 
-    public MasterCard(String cardNumber, int cvv, Date validDate, String cardHolder, String currency, String country) {
-        super(cardNumber, cvv, validDate, cardHolder, currency);
+    public MasterCard(String cardNumber, int cvv, Date validDate, String cardHolder, String currency, String country, double amount) {
+        super(cardNumber, cvv, validDate, cardHolder, currency, amount);
         this.country = country;
     }
 
@@ -23,4 +23,9 @@ public class MasterCard extends BaseCard{
         }
     }
 
+    @Override
+    public void showBaseInfo() {
+        System.out.println("MASTERCARD-INFO");
+        System.out.println(cardNumber + " -> " + amount + " -> "  + validDate + "\n");
+    }
 }

@@ -8,8 +8,8 @@ public class VisaCard  extends BaseCard{
 
     int cashback;
 
-    public VisaCard(String cardNumber, int cvv, Date validDate, String cardHolder, String currency, int cashback) {
-        super(cardNumber, cvv, validDate, cardHolder, currency);
+    public VisaCard(String cardNumber, int cvv, Date validDate, String cardHolder, String currency, int cashback, double amount) {
+        super(cardNumber, cvv, validDate, cardHolder, currency, amount);
         this.cashback = cashback;
     }
 
@@ -23,4 +23,9 @@ public class VisaCard  extends BaseCard{
         }
     }
 
+    @Override
+    public void showBaseInfo() {
+        System.out.println("VISACARD-INFO");
+        System.out.println(cardNumber + " -> " + amount + " -> "  + validDate + "\n");
+    }
 }

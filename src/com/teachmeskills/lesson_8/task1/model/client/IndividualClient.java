@@ -10,6 +10,4 @@ public class IndividualClient  extends BaseClient{
         super(name, accounts, cards);
     }
 
-
-
 }

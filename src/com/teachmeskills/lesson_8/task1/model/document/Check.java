@@ -18,7 +18,8 @@ public class Check {
     }
 
     public void showCheckInfo(){
-        System.out.println("Transfer card: " + card.cardNumber + "\n  Date: " + transferDate + "\n Amount: " + transferAmount);
+        System.out.println("--CHECK FOR TRANSFER--");
+        System.out.println("Transfer from card: " + card.cardNumber + "\nDate: " + transferDate + "\nAmount: " + transferAmount + "\n");
     }
 
 }

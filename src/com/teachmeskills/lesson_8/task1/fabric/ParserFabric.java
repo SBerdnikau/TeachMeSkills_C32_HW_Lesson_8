@@ -21,6 +21,7 @@ public class ParserFabric {
         String fileNameExt = fileName.substring(fileName.lastIndexOf('\\') + 1);
         int dotIndex = fileNameExt.lastIndexOf('.');
         String extension = (dotIndex > 0) ? fileNameExt.substring(dotIndex + 1) : "";
+
          switch (extension){
             case "docx" -> {return new DocXDocumentParser();}
             case "pdf"  -> {return new PdfDocumentParser();}
