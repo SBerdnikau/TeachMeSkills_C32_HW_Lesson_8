@@ -18,3 +18,9 @@
 14. implement a limit check. the essence of the check is that the amount for transfer does not exceed the limit in the checkCardLimitTransfer() method
 15. (optional) * try to rewrite it to a switch-case construction, maybe this will be a more capacious entry in the ParserFabric class
 16. add Docx parser
+
+*Task 3*
+
+Create an Apple class and add a color field with the private access modifier to it and
+initialize it. In the main method of another class, create an Apple object and without
+using setters change the value of the color field.
