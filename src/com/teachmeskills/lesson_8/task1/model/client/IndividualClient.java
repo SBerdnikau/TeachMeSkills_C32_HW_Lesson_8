@@ -9,5 +9,4 @@ public class IndividualClient  extends BaseClient{
     public IndividualClient(String name, Account[] accounts, BaseCard[] cards) {
         super(name, accounts, cards);
     }
-
 }

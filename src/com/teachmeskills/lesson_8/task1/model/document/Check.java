@@ -7,9 +7,9 @@ import java.util.Date;
 // TODO добавить поля: сумма перевода, дата перевода, номер счета или номер карты
 // TODO создать метод для вывода информации о чеке на экран
 public class Check {
-    private int transferAmount;
-    private Date transferDate;
-    private BaseCard card;
+    public int transferAmount;
+    public Date transferDate;
+    public BaseCard card;
 
     public Check(int transferAmount, Date transferDate, BaseCard card) {
         this.transferAmount = transferAmount;
@@ -21,5 +21,4 @@ public class Check {
         System.out.println("--CHECK FOR TRANSFER--");
         System.out.println("Transfer from card: " + card.cardNumber + "\nDate: " + transferDate + "\nAmount: " + transferAmount + "\n");
     }
-
 }

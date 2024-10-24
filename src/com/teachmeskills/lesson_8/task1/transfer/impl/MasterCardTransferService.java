@@ -13,26 +13,24 @@ public class MasterCardTransferService implements CardTransferService {
 
     @Override
     public Check transferFromCardToCard(BaseCard sendingCard, BaseCard receivingCard, int amountTransfer) {
-        //реализовать логику перевода
         if (sendingCard.checkCardLimitTransfer(amountTransfer)) {
             sendingCard.amount -= amountTransfer;
             receivingCard.amount += amountTransfer;
             return new Check(amountTransfer, new Date(), sendingCard);
         }else {
-            System.out.println("WORKING! Transfer limit exceeded " + (amountTransfer - Constans.TRANSFER_LIMIT_MASTER_CARD));
+            System.out.println("ATTENTION! Transfer limit exceeded " + (amountTransfer - Constans.TRANSFER_LIMIT_MASTER_CARD));
             return new Check( Constans.TRANSFER_LIMIT_MASTER_CARD, new Date(), sendingCard);
         }
     }
 
     @Override
     public Check transferFromCardToAccount(BaseCard sendingCard, Account receivingAccount, int amountTransfer) {
-        //реализовать логику перевода
         if (sendingCard.checkCardLimitTransfer(amountTransfer)) {
             sendingCard.amount -= amountTransfer;
             receivingAccount.amount += amountTransfer;
             return new Check(amountTransfer, new Date(), sendingCard);
         }else {
-            System.out.println("WORKING! Transfer limit exceeded " + (amountTransfer - Constans.TRANSFER_LIMIT_MASTER_CARD));
+            System.out.println("ATTENTION! Transfer limit exceeded " + (amountTransfer - Constans.TRANSFER_LIMIT_MASTER_CARD));
             return new Check( Constans.TRANSFER_LIMIT_MASTER_CARD, new Date(), sendingCard);
         }
     }

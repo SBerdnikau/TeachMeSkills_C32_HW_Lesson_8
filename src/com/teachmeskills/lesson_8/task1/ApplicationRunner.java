@@ -19,7 +19,7 @@ import java.util.Scanner;
 public class ApplicationRunner {
     public static void main(String[] args) {
         // TODO запросить с консоли путь и имя файла
-        System.out.print("Введите путь к файлу: ");
+        System.out.print("Enter the path to the file: ");
         Scanner scanner = new Scanner(System.in);
         String filePath =  scanner.nextLine();
 

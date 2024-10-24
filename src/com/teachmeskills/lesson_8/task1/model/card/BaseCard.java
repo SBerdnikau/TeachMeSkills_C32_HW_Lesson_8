@@ -21,7 +21,6 @@ public abstract class BaseCard {
     }
 
     // TODO добавить в метод входной параметр "сумма для трансфера"
-
     /**
      *  Метод проверки лимита карты перед переводом
      *  Метод должен проверять превышает ли сумма перевода лимит для карты
@@ -33,7 +32,6 @@ public abstract class BaseCard {
     public abstract boolean checkCardLimitTransfer(int amountForTransfer);
 
     public void showBaseInfo(){
-        System.out.println(cardNumber + "->" + amount + "->" + validDate);
+        System.out.println(cardNumber + " -> " + amount + " -> " + validDate);
     }
-
 }
