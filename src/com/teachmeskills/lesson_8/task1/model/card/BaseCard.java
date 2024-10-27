@@ -34,4 +34,12 @@ public abstract class BaseCard {
     public void showBaseInfo(){
         System.out.println(cardNumber + " -> " + amount + " -> " + validDate);
     }
+
+    public void setAddToCard(int amount){
+        this.amount += amount;
+    }
+
+    public void setFromCardToCard(int amount){
+        this.amount -= amount;
+    }
 }

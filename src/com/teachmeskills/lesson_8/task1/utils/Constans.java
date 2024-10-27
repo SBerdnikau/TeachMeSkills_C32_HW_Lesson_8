@@ -5,4 +5,5 @@ package com.teachmeskills.lesson_8.task1.utils;
 public interface Constans {
     int TRANSFER_LIMIT_MASTER_CARD = 600;
     int TRANSFER_LIMIT_VISA_CARD = 400;
+    String WARNING_EXCEEDING_LIMIT = "Transfer limit exceeded -> ";
 }

@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class MasterCard extends BaseCard{
 
-    public String country;
+    private String country;
 
     public MasterCard(String cardNumber, int cvv, Date validDate, String cardHolder, String currency, String country, double amount) {
         super(cardNumber, cvv, validDate, cardHolder, currency, amount);
@@ -23,5 +23,13 @@ public class MasterCard extends BaseCard{
     public void showBaseInfo() {
         System.out.println("MASTERCARD-INFO");
         System.out.println(cardNumber + " -> " + amount + " -> "  + validDate + "\n");
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }

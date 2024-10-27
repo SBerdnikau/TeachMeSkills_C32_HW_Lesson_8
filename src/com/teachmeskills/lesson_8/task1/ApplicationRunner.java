@@ -13,6 +13,7 @@ import com.teachmeskills.lesson_8.task1.model.document.Check;
 import com.teachmeskills.lesson_8.task1.transfer.impl.MasterCardTransferService;
 import com.teachmeskills.lesson_8.task1.transfer.impl.VisaCardTransferService;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -31,16 +32,17 @@ public class ApplicationRunner {
         // TODO реализовать тестовый сценарий
         // создать двух клиентов
         // каждому клиенту создать два счета и две карты
-        BaseClient client1  = new IndividualClient( "Client_001",
-                new Account[]{  new Account("000011", 2000), new Account("000012", 100)},
-                new BaseCard[]{ new MasterCard("CH00001", 111, new Date(), "Client_001", "USD", "BLR", 1200),
-                new VisaCard("CH00002", 112, new Date(), "Client_002", "USD", 2, 300)}
-        );
-        BaseClient client2  = new LegalClient( "Client_002",
-                new Account[]{  new Account("000021", 5000), new Account("000022", 1000)},
-                new BaseCard[]{ new MasterCard("CH00002", 221, new Date(), "Client_002", "USD", "BLR", 800),
-                new VisaCard("CH00002", 222, new Date(), "Client_002", "USD", 1, 700)}
-        );
+        BaseClient client1 = new IndividualClient("BIO0-001-H001-G99",
+                new Account[]{ new Account( "B00-B11-D11-444", 2000), new Account("A01-B02-876-234", 2500) },
+                new BaseCard[]{ new MasterCard( "001-111-123-534", 111, new Date(), "SERGEY", "BYN", "BLR", 2500 ),
+                new VisaCard( "002-345-222-221", 122, new Date(), "SERGEY", "USD", 1, 3000  )},
+                "HB6500987645");
+
+        BaseClient client2 = new LegalClient("LC11-222-111-324",
+                new Account[]{ new Account( "111-222-546-999", 5000), new Account("222-234-543-655", 10000) },
+                new BaseCard[]{ new MasterCard( "222-432-222-111", 222, new Date(), "KATE", "BYN", "BLR", 7500 ),
+                        new VisaCard( "222-432-000-399", 876, new Date(), "KATE", "USD", 2, 12000  )},
+                "L61-C12-G23-N22");
 
         BaseCard[] cardsClient1 =  client1.getCards();
         MasterCard masterCardClient1 = (MasterCard) cardsClient1[0];
@@ -48,7 +50,7 @@ public class ApplicationRunner {
         MasterCard masterCardClient2 = (MasterCard) cardsClient2[0];
         VisaCard visaCardClient2 = (VisaCard) cardsClient2[1];
         Account[] accountsClient1 = client2.getAccounts();
-        Account accountClient1 =   accountsClient1[1];
+        Account accountClient1 =   accountsClient1[0];
 
         // перевести с карты одного клиента на карту другого сумму денег
         MasterCardTransferService masterCardTransfer1 = new MasterCardTransferService();

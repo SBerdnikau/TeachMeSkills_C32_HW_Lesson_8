@@ -14,11 +14,11 @@ public class VisaCardTransferService implements CardTransferService {
     @Override
     public Check transferFromCardToCard(BaseCard sendingCard, BaseCard receivingCard, int amountTransfer) {
         if (sendingCard.checkCardLimitTransfer(amountTransfer)) {
-            sendingCard.amount -= amountTransfer;
-            receivingCard.amount -= amountTransfer;
+            sendingCard.setFromCardToCard(amountTransfer);
+            receivingCard.setAddToCard(amountTransfer);
             return new Check(amountTransfer, new Date(), sendingCard);
         }else {
-            System.out.println("ATTENTION! Transfer limit exceeded " + (amountTransfer - Constans.TRANSFER_LIMIT_VISA_CARD));
+            System.out.println(Constans.WARNING_EXCEEDING_LIMIT + (amountTransfer - Constans.TRANSFER_LIMIT_VISA_CARD));
             return new Check( Constans.TRANSFER_LIMIT_VISA_CARD, new Date(), sendingCard);
         }
     }
@@ -26,13 +26,12 @@ public class VisaCardTransferService implements CardTransferService {
     @Override
     public Check transferFromCardToAccount(BaseCard sendingCard, Account receivingAccount, int amountTransfer) {
         if (sendingCard.checkCardLimitTransfer(amountTransfer)) {
-            sendingCard.amount -= amountTransfer;
-            receivingAccount.amount += amountTransfer;
+            sendingCard.setFromCardToCard(amountTransfer);
+            receivingAccount.setAddToCard(amountTransfer);
             return new Check(amountTransfer, new Date(), sendingCard);
         }else {
-            System.out.println("ATTENTION! Transfer limit exceeded " + (amountTransfer - Constans.TRANSFER_LIMIT_VISA_CARD));
+            System.out.println(Constans.WARNING_EXCEEDING_LIMIT + (amountTransfer - Constans.TRANSFER_LIMIT_VISA_CARD));
             return new Check( Constans.TRANSFER_LIMIT_VISA_CARD, new Date(), sendingCard);
         }
     }
-
 }

@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class VisaCard  extends BaseCard{
 
-    int cashback;
+    private int cashback;
 
     public VisaCard(String cardNumber, int cvv, Date validDate, String cardHolder, String currency, int cashback, double amount) {
         super(cardNumber, cvv, validDate, cardHolder, currency, amount);
@@ -23,5 +23,13 @@ public class VisaCard  extends BaseCard{
     public void showBaseInfo() {
         System.out.println("VISACARD-INFO");
         System.out.println(cardNumber + " -> " + amount + " -> "  + validDate + "\n");
+    }
+
+    public int getCashback() {
+        return cashback;
+    }
+
+    public void setCashback(int cashback) {
+        this.cashback = cashback;
     }
 }
