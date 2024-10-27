@@ -18,6 +18,8 @@ public class VisaCardTransferService implements CardTransferService {
             receivingCard.setAddToCard(amountTransfer);
             return new Check(amountTransfer, new Date(), sendingCard);
         }else {
+            sendingCard.setFromCardToCard(Constans.TRANSFER_LIMIT_VISA_CARD);
+            receivingCard.setAddToCard(Constans.TRANSFER_LIMIT_VISA_CARD);
             System.out.println(Constans.WARNING_EXCEEDING_LIMIT + (amountTransfer - Constans.TRANSFER_LIMIT_VISA_CARD));
             return new Check( Constans.TRANSFER_LIMIT_VISA_CARD, new Date(), sendingCard);
         }
@@ -30,6 +32,8 @@ public class VisaCardTransferService implements CardTransferService {
             receivingAccount.setAddToCard(amountTransfer);
             return new Check(amountTransfer, new Date(), sendingCard);
         }else {
+            sendingCard.setFromCardToCard(Constans.TRANSFER_LIMIT_VISA_CARD);
+            receivingAccount.setAddToCard(Constans.TRANSFER_LIMIT_VISA_CARD);
             System.out.println(Constans.WARNING_EXCEEDING_LIMIT + (amountTransfer - Constans.TRANSFER_LIMIT_VISA_CARD));
             return new Check( Constans.TRANSFER_LIMIT_VISA_CARD, new Date(), sendingCard);
         }

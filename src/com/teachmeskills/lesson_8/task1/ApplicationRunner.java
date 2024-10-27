@@ -13,7 +13,6 @@ import com.teachmeskills.lesson_8.task1.model.document.Check;
 import com.teachmeskills.lesson_8.task1.transfer.impl.MasterCardTransferService;
 import com.teachmeskills.lesson_8.task1.transfer.impl.VisaCardTransferService;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -55,7 +54,7 @@ public class ApplicationRunner {
         // перевести с карты одного клиента на карту другого сумму денег
         MasterCardTransferService masterCardTransfer1 = new MasterCardTransferService();
         masterCardClient1.showBaseInfo();
-        Check check1 = masterCardTransfer1.transferFromCardToCard(masterCardClient1, masterCardClient2, 200);
+        Check check1 = masterCardTransfer1.transferFromCardToCard(masterCardClient1, masterCardClient2, 700);
         check1.showCheckInfo();
         masterCardClient1.showBaseInfo();
 
